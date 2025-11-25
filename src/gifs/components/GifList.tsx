@@ -1,7 +1,6 @@
 import type {FC} from 'react';
 import type { Gif } from '../interfaces/gif.interface';
-
-
+import '../gifs.css'
 
 interface Props {
     gifs: Gif[];

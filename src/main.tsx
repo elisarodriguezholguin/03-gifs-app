@@ -1,14 +1,14 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
-import { GifsApp } from './GifsApp';
+import './index.css'; // misma carpeta =mismo orden (.) - Aplica para todo el proyecto
+//import './gifs/index.css'//dentro de una carpeta llamada gifs (/)
 
-import './index.css'
+import { GifsApp } from './GifsApp';
 
 import { MyCounterApp } from './counter/components/MyCounterApp';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   {/* <GifsApp/> */}
-   < MyCounterApp/>
+    <GifsApp/>
+   {/* < MyCounterApp/> */}
   </StrictMode>,
 )
