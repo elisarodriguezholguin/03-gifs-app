@@ -5,7 +5,6 @@ import './index.css'; // misma carpeta =mismo orden (.) - Aplica para todo el pr
 
 import { GifsApp } from './GifsApp';
 
-import { MyCounterApp } from './counter/components/MyCounterApp';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <GifsApp/>

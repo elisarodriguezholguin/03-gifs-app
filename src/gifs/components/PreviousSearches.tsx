@@ -14,7 +14,7 @@ export const PreviousSearches: FC<Props> = ({searches, onLabelClicked}) => {
               <ul className="previous-searches-List"> 
               {searches.map((term)=> (
                 //li el item de la lista
-                <li key={term} onClick ={(event) => {
+                <li key={term} onClick ={() => {
                     console.log("onClick desde un item del hijo PreviousSearches")
                     onLabelClicked(term)}}>
                 {term}</li>
