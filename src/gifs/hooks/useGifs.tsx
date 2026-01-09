@@ -55,11 +55,13 @@ export const useGifs = () => {
     {
         //Aqui va lo que se va a exponer - exportar
         //Properties
+
         gifs,
-        //Methods
         previousTerms,
-        handleTermClicked,
+        //Methods
         handleSearch,
+        handleTermClicked,
+      
     
     }
   )
