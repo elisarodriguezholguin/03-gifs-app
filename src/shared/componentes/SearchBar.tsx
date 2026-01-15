@@ -12,7 +12,7 @@ export const SearchBar =({placeholder='Buscar',onQuery}:Props) => {
    useEffect(() => {
   const timeoutId = setTimeout(() => {
     onQuery(query)
-  }, 700);
+  }, 600);
 
    return () => {
      clearTimeout (timeoutId); // para limpiar y capturar la salida en pantalla (escritura)
@@ -32,7 +32,8 @@ export const SearchBar =({placeholder='Buscar',onQuery}:Props) => {
   
   return (
  <div className= "search-container">
-    <input type ="text" 
+    <input 
+    type ="text" 
     placeholder={placeholder}
     value= {query}
     onChange={(event)=>setquery(event.target.value)}

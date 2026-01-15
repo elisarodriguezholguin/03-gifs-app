@@ -11,8 +11,6 @@ export const useGifs = () => {
 
   const gifsCache = useRef <Record<string,Gif[]>>({}); // Variables internas, no se usan en el front (html)
      
-       
-     
       const handleTermClicked = async (term: string) => { 
         if (gifsCache.current[term]) {
          setGifs(gifsCache.current [term]);
@@ -20,6 +18,7 @@ export const useGifs = () => {
         }
         const gifs = await getGifsByQuery(term);
         setGifs(gifs);
+        gifsCache.current[term]=gifs;
       };
        // if(lastSearch.current === term){
        //     console.log("bloqueado por hacer la misma peticion")

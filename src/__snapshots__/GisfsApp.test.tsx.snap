@@ -10,6 +10,7 @@ exports[`GifsApp > sould render component properly 1`] = `
     </h1>
     <p>
       Descubre y comparte el gif perfecto
+       
     </p>
   </div>
   <div
