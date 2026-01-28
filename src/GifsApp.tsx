@@ -13,7 +13,7 @@ export const GifsApp = () => {
       {/*Header*/}
       <CustomHeader
         title="Buscador de Gifs"
-        description="Descubre y comparte el gif perfecto"
+        description="Descubre y comparte el Gif perfecto"
       />
       {/*Search*/}
       <SearchBar placeholder="Busca lo que quieras"

@@ -1,7 +1,5 @@
 export const gifsMock =[
 
-
-
   {
     id: 'kvn0FeqyOXgohYNBNa',
     title: 'Goku GIF',
