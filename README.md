@@ -1,73 +1,69 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Pruebas Unitarias
 
-Currently, two official plugins are available:
+La aplicación cuenta con pruebas unitarias implementadas con Vitest y React Testing Library, enfocadas en garantizar el correcto funcionamiento de los componentes, hooks y lógica de negocio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# ✔️ Componentes probados
 
-## React Compiler
+# SearchBar
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Renderizado correcto del input y botón
 
-## Expanding the ESLint configuration
+- Ejecución de la búsqueda al escribir texto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Implementación de debounce, asegurando que la función de búsqueda se ejecute una sola vez con el último valor ingresado
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Ejecución de la búsqueda al presionar el botón
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Validación del placeholder recibido por props
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Componentes de GIFs
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Renderizado correcto de listas de GIFs
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Manejo adecuado de estados de carga
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* Validación de datos obtenidos desde la API
+
+# ✔️ Hooks personalizados
+
+- useGifs
+
+- Retorno del estado inicial
+
+- Actualización correcta del estado al realizar una búsqueda
+
+- Llamada correcta a las acciones que consultan la API
+
+- Manejo de respuestas y errores simulados mediante mocks
+
+# ✔️ Acciones y servicios
+
+- Pruebas sobre las funciones encargadas de consumir la API de Giphy
+
+ - Uso de mocks para simular respuestas HTTP y evitar dependencias externas
+
+- Verificación de datos transformados antes de ser utilizados por los componentes
+
+# 📊 Cobertura de Código
+
+- Las pruebas permiten alcanzar una alta cobertura de código, asegurando la estabilidad del proyecto y reduciendo la posibilidad de errores en producción.
+
+- Statements: ~89%
+
+- Branches: ~73%
+
+- Functions: ~84%
+
+- Lines: ~91%
+
+# 🛠 Herramientas de Testing
+
+- Vitest
+
+- React Testing Library
+
+- @testing-library/user-event
+
+- Mocks con vi.fn()
