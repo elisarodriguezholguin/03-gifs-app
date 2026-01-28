@@ -24,6 +24,9 @@ describe('MyCounterApp', () => {
     expect(screen.getByRole('heading',{level:1}).innerHTML).toContain(
     `counter:40`
     );
+
+    expect(2).toBe(1)
+
     expect(screen.getByRole('button',{name: '+1'})).toBeDefined();
     expect(screen.getByRole('button',{name: '-1'})).toBeDefined();
     expect(screen.getByRole('button',{name: 'Reset'})).toBeDefined();
